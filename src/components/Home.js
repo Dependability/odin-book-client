@@ -19,7 +19,7 @@ function Home() {
         }
 
         console.log('stay')
-        fetch('http://limitless-escarpment-37900.herokuapp.com/api/posts')
+        fetch('https://limitless-escarpment-37900.herokuapp.com/api/posts')
         .then((res) => res.json())
         .then((data) => {
             setPosts([...data.posts])})
@@ -37,7 +37,7 @@ function Home() {
     
     function createPost() {
         const bearer = Cookies.get('Authorization');
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/posts`, {method: 'POST', headers: {'Content-Type': 'application/json','Authorization': `Bearer ${bearer}`}, body: JSON.stringify({
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/posts`, {method: 'POST', headers: {'Content-Type': 'application/json','Authorization': `Bearer ${bearer}`}, body: JSON.stringify({
             text: postText})})
         .then((res) => res.json())
         .then((data) => {

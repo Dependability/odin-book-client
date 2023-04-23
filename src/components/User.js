@@ -21,7 +21,7 @@ function User() {
 
         const bearer = Cookies.get('Authorization');
         let currentUserId = JSON.parse(Cookies.get('User'))._id;
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             setCurrent({...data.user});
@@ -36,7 +36,7 @@ function User() {
             }   
         })
 
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${userId}/posts`)
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${userId}/posts`)
         .then((response) => response.json())
         .then((data) => {
             setUserPosts([...data.posts]);
@@ -44,7 +44,7 @@ function User() {
            
         })
         
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${userId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${userId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             console.log()
@@ -61,7 +61,7 @@ function User() {
     function friendRequest(friendId, type='friend') {
         
         const bearer = Cookies.get('Authorization');
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
         .then((res) => res.json())
         .then((data) => {
 

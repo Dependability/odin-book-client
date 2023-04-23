@@ -13,7 +13,7 @@ function Friends() {
     useEffect(()=> {
         const bearer = `Bearer ${Cookies.get('Authorization')}`;
         
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users`, {method: 'GET', headers: {Authorization: `${bearer}`}}).then((res) => res.json())
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users`, {method: 'GET', headers: {Authorization: `${bearer}`}}).then((res) => res.json())
         .then(data => {
             setUserList([...data.users])
         })
@@ -24,7 +24,7 @@ function Friends() {
     function friendRequest(friendId, type='friend') {
         
         const bearer = Cookies.get('Authorization');
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
         .then((res) => res.json())
         .then((data) => {
 

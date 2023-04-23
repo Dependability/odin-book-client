@@ -15,7 +15,7 @@ export default function Requests() {
     useEffect(()=> {
         const bearer = Cookies.get('Authorization');
         let currentUserId = JSON.parse(Cookies.get('User'))._id;
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             setSentRequests([...data.user.outgoing]);
@@ -25,7 +25,7 @@ export default function Requests() {
 
     function acceptRequest(friendId, index) {
         const bearer = Cookies.get('Authorization');
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/accept`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/accept`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
         .then((res) => res.json())
         .then((data) => {
             setIncoming((c)=> {
@@ -38,7 +38,7 @@ export default function Requests() {
     }
     function cancelRequest(friendId, index, type='outgoing') {
         const bearer = Cookies.get('Authorization');
-        fetch(`http://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/cancel`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/cancel`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
         .then((res) => res.json())
         .then((data) => {
             if (type === 'outgoing') {
