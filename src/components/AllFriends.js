@@ -3,7 +3,7 @@ import Icon from "@mdi/react";
 import { useEffect, useState } from "react";
 import Layout from "./Layout";
 import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PreviUser from "./PreviUser";
 import pfpicon from '../assets/user-profile-icon.svg';
 
@@ -32,7 +32,7 @@ export default function AllFriends() {
                         <Icon path={mdiArrowLeft}></Icon>
                     </div>
                     <div className='right'>
-                        <a href={process.env.PUBLIC_URL + '/friends'}>Friends</a>
+                        <Link to={'/friends'}>Friends</Link>
                         <h2>All Friends</h2>
                     </div>
                 </div>

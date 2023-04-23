@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import Icon from '@mdi/react';
 import { mdiClose, mdiMessageOutline, mdiSend, mdiShareOutline, mdiThumbUp, mdiThumbUpOutline } from '@mdi/js';
 import {useEffect, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import pfpicon from '../assets/user-profile-icon.svg';
 
 function Post({info}) {
@@ -77,7 +77,7 @@ function Post({info}) {
                             <img src={pfpicon} alt='' />
                         </div>
                         <div className='info'>
-                            <a href={process.env.PUBLIC_URL + '/user/' + info.author._id}>{info.author.username}</a>
+                            <Link to={'/user/' + info.author._id}>{info.author.username}</Link>
                             <div className='time'>3d</div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ function Post({info}) {
         <div className='top'>
             <div className='pfp' onClick={()=> {navigate('/user/' + info.author._id)}}><img src={pfpicon} alt='' /></div>
             <div className='info'>
-                <a href={process.env.PUBLIC_URL + '/user/' + info.author._id}>{info.author.username}</a>
+                <Link to={'/user/' + info.author._id}>{info.author.username}</Link>
                 <div className='time'>3d</div>
             </div>
 

@@ -1,7 +1,7 @@
 import Icon from '@mdi/react';
 import '../assets/styles.css'
 import { mdiHomeOutline, mdiAccountMultipleOutline, mdiHome, mdiAccountMultiple, mdiLogout } from '@mdi/js';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import pfpicon from '../assets/user-profile-icon.svg';
 import { useState, useEffect } from 'react';
@@ -52,8 +52,8 @@ function Layout(props) {
             <h1 className='logo' onClick={()=> {navigate('/')}}>OdinBook</h1>
             </div>
             <nav>
-                <div className={'navItem ' + (props.selected === 'Home' ? 'selected' : 'unselected')}><a href={process.env.PUBLIC_URL + '/'} ><Icon path={props.selected === 'Home' ? mdiHome : mdiHomeOutline} /></a></div>
-                <div className={'navItem ' + (props.selected === 'Friends' ? 'selected' : 'unselected')}><a href={process.env.PUBLIC_URL + '/friends'} ><Icon path={props.selected === 'Friends' ?mdiAccountMultiple : mdiAccountMultipleOutline}/></a></div>
+                <div className={'navItem ' + (props.selected === 'Home' ? 'selected' : 'unselected')}><Link to={'/'} ><Icon path={props.selected === 'Home' ? mdiHome : mdiHomeOutline} /></Link></div>
+                <div className={'navItem ' + (props.selected === 'Friends' ? 'selected' : 'unselected')}><Link to={'/friends'} ><Icon path={props.selected === 'Friends' ?mdiAccountMultiple : mdiAccountMultipleOutline}/></Link></div>
             </nav>
             <div className='right'>
             <div className='navProfile' onClick={()=>{setPopup(true)}}><img src={pfpicon} alt='' /></div>
