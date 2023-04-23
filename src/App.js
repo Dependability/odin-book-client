@@ -9,7 +9,7 @@ import AllFriends from './components/AllFriends';
 function App() {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='odin-book-client'>
       <Routes>
         <Route exact path='/login' element={<SignIn />} />
         <Route exact path='/' element={<Home />}/>

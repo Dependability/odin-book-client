@@ -21,6 +21,7 @@ function Layout(props) {
             })
         } else {
             navigate('/login')
+            return;
         }
         
     },[navigate])

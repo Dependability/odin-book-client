@@ -16,7 +16,6 @@ function Post({info}) {
 
     useEffect(()=> {
         let currentUser = JSON.parse(Cookies.get('User'));
-        console.log('this is dumb')
         if (likeList.includes(currentUser._id)) {
             setLike(true);
         } else {

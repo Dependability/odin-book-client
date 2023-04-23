@@ -12,6 +12,12 @@ function Home() {
     const [postText, setText] = useState('');
     const navigate = useNavigate();
     useEffect(()=> {
+        if (Cookies.get('User')) {
+        } else {
+            navigate('/login')
+            return;
+        }
+
         console.log('stay')
         fetch('http://limitless-escarpment-37900.herokuapp.com/api/posts')
         .then((res) => res.json())
