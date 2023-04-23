@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/odin-book-client/static/css/main.4a19f29a.css",
+    "main.js": "/odin-book-client/static/js/main.ddbbbcb8.js",
+    "static/media/user-profile-icon.svg": "/odin-book-client/static/media/user-profile-icon.f1e8ae328cbc4f8b671e6608084330e1.svg",
+    "static/media/square-icon.svg": "/odin-book-client/static/media/square-icon.b5537371f4b83134464fda549a5ba2bd.svg",
+    "index.html": "/odin-book-client/index.html",
+    "main.4a19f29a.css.map": "/odin-book-client/static/css/main.4a19f29a.css.map",
+    "main.ddbbbcb8.js.map": "/odin-book-client/static/js/main.ddbbbcb8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a19f29a.css",
+    "static/js/main.ddbbbcb8.js"
+  ]
+}
