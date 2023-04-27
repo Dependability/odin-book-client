@@ -43,7 +43,7 @@ body {
     justify-content: center;
     padding: 2px;
     align-items: center;
-    border-bottom: 3px initial solid;
+    border-bottom: 3px white solid;
 }
 
 
@@ -81,7 +81,8 @@ body {
 .layout header .right .navProfile, .homeCreatePost .pfp, .post .top .pfp {
     width: 36px;
     height: 36px;
-    border: 2px black solid;
+    overflow: hidden;
+    
     border-radius: 50%;
     cursor: pointer;
 }
@@ -147,7 +148,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px black solid;
+    overflow: hidden;
 }
 .user-popup .user-profile {
     padding: 12px;
@@ -188,7 +189,10 @@ body {
 }
 .create-post .bottom {
     padding: 12px;
+    display: flex;
+
 }
+
 .create-post .user-cred {
     display: flex;
     gap: 12px;
@@ -203,7 +207,7 @@ body {
     width: 40px;
     height:40px;
     border-radius: 50%;
-    border: 2px solid black;
+    overflow: hidden;
 }
 
 .create-post .input-text {
@@ -305,7 +309,7 @@ body {
 }
 
 .sent-request-list .inner .pfp{
-    border: 2px #65676b solid;
+    overflow: hidden;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -495,7 +499,7 @@ body {
     background-color: rgb(0,0,0,.1);
 }
 .create-comment .pfp, .comment-node .pfp {
-    border: 2px black solid;
+    overflow: hidden;
     width: 30px;
     border-radius: 50%;
     cursor: pointer;
@@ -632,7 +636,35 @@ body {
 
 .homeCreatePost .bottom {
     height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
 }
+
+
+.homeCreatePost .bottom .post-image {
+    display: flex;
+    font-weight: 600;
+    height: 40px;
+    width: 200px;
+    cursor: not-allowed;
+    align-items: center;
+    justify-content: center;
+    color: #65676b;
+    gap: 8px;
+    border-radius: 6px;
+}
+.homeCreatePost .bottom .post-image:hover {
+    background-color: rgb(0,0,0,.1);
+}
+
+.homeCreatePost .bottom .post-image svg {
+    color: #45bd62;
+    height: 30px;
+}
+
+
 
 .homeCreatePost .top .postInput {
     flex: 1;
@@ -721,7 +753,7 @@ body {
 .friend-request-item .pfp, .all-friend-item .pfp {
     height: 60px;
     width: 60px;
-    border: 1px black solid;
+    overflow: hidden;
     border-radius: 50%;
 }
 .friend-request-page .leftControls .top-header .left, .all-friend-page .leftControls .top-header .left {
@@ -879,11 +911,26 @@ body {
 
 .leftMenu .disclaimer {
     margin-top: auto;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #65676b;
+    cursor: pointer;
 }
 
+.leftMenu .disclaimer svg {
+    height: 28px;
+    cursor: pointer;
+}
+.leftMenu .disclaimer:hover {
+    text-decoration: underline;
+    color: black
+}
 .leftMenu .pfp {
     width: 36px;
-    border: 2px black solid;
+    overflow: hidden;
     height: 36px;
     border-radius: 50%;
 }
@@ -1336,4 +1383,11 @@ body {
 
 .first-page .error {
     color: red;
+}
+
+@media screen and (max-width: 1500px){
+    .leftMenu {
+        display: none;
+    }
+    
 }

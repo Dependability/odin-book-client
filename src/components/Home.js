@@ -4,7 +4,7 @@ import Layout from './Layout';
 import {useState, useEffect} from 'react';
 import Icon from '@mdi/react';
 import '../assets/styles.css'
-import { mdiAccountMultiple, mdiClose } from '@mdi/js';
+import { mdiAccountMultiple, mdiClose, mdiFileImage, mdiGithub, mdiImage } from '@mdi/js';
 import { useNavigate } from "react-router-dom";
 import pfpicon from '../assets/user-profile-icon.svg';
 function Home() {
@@ -75,7 +75,7 @@ function Home() {
             <div className='menuOption' onClick={()=>{navigate(`/user/${currentUser._id}`)}}><div className='pfp'>
                             <img src={pfpicon} alt='' /></div> User Profile</div>
             <div className='menuOption' onClick={()=>{navigate(`/friends`)}}><div className='friendIcon'><Icon path={mdiAccountMultiple} /></div>Friends</div>
-            <div className="disclaimer">Made by Seyi Bakare</div>
+            <a href='https://www.github.com/Dependability' target='_blank' rel='noreferrer' className="disclaimer"><Icon path={mdiGithub} />Made by Seyi Bakare</a>
         </div>
         <div className='homePosts'>
         <div className='homeCreatePost'>
@@ -89,7 +89,9 @@ function Home() {
                 </div>
             </div>
             <div className='bottom'>
-                Photo
+                <div className="post-image">
+                    <Icon path={mdiFileImage} /> Photo
+                </div>
             </div>
         </div>
     { posts.length ? posts.map((val, i)=>{

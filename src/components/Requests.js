@@ -5,6 +5,8 @@ import Layout from "./Layout";
 import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import PreviUser from "./PreviUser";
+import squareicon from '../assets/square-icon.svg';
+import pfpicon from '../assets/user-profile-icon.svg';
 
 export default function Requests() {
     const [sentRequests, setSentRequests] = useState([]);
@@ -79,7 +81,7 @@ export default function Requests() {
                             {sentRequests.map((val, i)=> {
                                 return <div className='inner-item' key={i}>
                                     <div className='left'>
-                                    <div className='pfp'></div>
+                                    <div className='pfp'><img src={pfpicon} alt='pfp' /></div>
                                     <div className='name'>
                                         <span>{val.username}</span>
                                         {val.canceled ? <div className='canceled'>Request canceled</div> : ''}
@@ -111,7 +113,7 @@ export default function Requests() {
                         return <div className={`friend-request-item ${selected === ind ? 'selected' : ''}`} key={ind} onClick={()=> {
                             setSelected(ind);
                         }}>
-                        <div className='pfp'></div>
+                        <div className='pfp'><img src={pfpicon} alt='pfp' /></div>
                         <div className='right'>
                             <span className='username'>{val.username}</span>
                             {(val.canceled || val.accepted) ? <div className='canceled'>{val.canceled ? 'Request declined' : 'Request accepted'}</div> : <div className='request-controls'>
