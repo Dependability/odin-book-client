@@ -24,7 +24,7 @@ function Post({info}) {
     },[likeList])
     function like() {
         const bearer = `Bearer ${Cookies.get('Authorization')}`;
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/posts/${info._id}/like`, {method: "POST", headers: {Authorization: bearer}})
+        fetch(`${process.env.REACT_APP_API_URL}/api/posts/${info._id}/like`, {method: "POST", headers: {Authorization: bearer}})
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -47,7 +47,7 @@ function Post({info}) {
 
     function comment() {
         const bearer = `Bearer ${Cookies.get('Authorization')}`;
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/posts/${info._id}/comment`, {method: "POST", headers: {Authorization: bearer, 'Content-Type': 'application/json'}, body: JSON.stringify({text: commentText})})
+        fetch(`${process.env.REACT_APP_API_URL}/api/posts/${info._id}/comment`, {method: "POST", headers: {Authorization: bearer, 'Content-Type': 'application/json'}, body: JSON.stringify({text: commentText})})
         .then(res => res.json())
         .then(data => {
 

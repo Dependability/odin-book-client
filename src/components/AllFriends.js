@@ -14,7 +14,7 @@ export default function AllFriends() {
     useEffect(()=> {
         const bearer = Cookies.get('Authorization');
         let currentUserId = JSON.parse(Cookies.get('User'))._id;
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             setFriends([...data.user.friends]);

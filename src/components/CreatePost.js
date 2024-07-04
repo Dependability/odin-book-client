@@ -7,7 +7,7 @@ function CreatePost() {
         e.preventDefault();
         const bearer = `Bearer ${Cookies.get('Authorization')}`
         console.log(bearer)
-        fetch('https://limitless-escarpment-37900.herokuapp.com/api/posts', {method: 'POST', headers: {'Content-Type': 'application/json','Authorization': bearer} , body: JSON.stringify({
+        fetch(`${process.env.REACT_APP_API_URL}/api/posts`, {method: 'POST', headers: {'Content-Type': 'application/json','Authorization': bearer} , body: JSON.stringify({
             text: e.target.text.value
         })}).then(res => res.json)
         .then(data => {

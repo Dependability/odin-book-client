@@ -19,7 +19,7 @@ function PreviUser({userId}) {
 
         const bearer = Cookies.get('Authorization');
         let currentUserId = JSON.parse(Cookies.get('User'))._id;
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/${currentUserId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             setCurrent({...data.user});
@@ -34,7 +34,7 @@ function PreviUser({userId}) {
             }   
         })
 
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${userId}/posts`)
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/${userId}/posts`)
         .then((response) => response.json())
         .then((data) => {
             setUserPosts([...data.posts]);
@@ -42,7 +42,7 @@ function PreviUser({userId}) {
            
         })
         
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${userId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/${userId}`, {headers: {'Authorization': `Bearer ${bearer}`}})
         .then((response) => response.json())
         .then((data) => {
             console.log()
@@ -59,7 +59,7 @@ function PreviUser({userId}) {
     function friendRequest(friendId, type='friend') {
         
         const bearer = Cookies.get('Authorization');
-        fetch(`https://limitless-escarpment-37900.herokuapp.com/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/${friendId}/${type}`, {method: 'POST', headers: {'Authorization': `Bearer ${bearer}`}})
         .then((res) => res.json())
         .then((data) => {
 

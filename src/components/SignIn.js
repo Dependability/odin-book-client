@@ -19,7 +19,7 @@ function SignIn() {
         }
 
 
-        fetch('https://limitless-escarpment-37900.herokuapp.com/api' + url, {headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body), method: "POST"})
+        fetch(process.env.REACT_APP_API_URL + '/api' + url, {headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body), method: "POST"})
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
